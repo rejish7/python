@@ -2,11 +2,12 @@
 
 # def take_work():
 #     W=input("Enter a Word  :")
-#     reutrn W
+#     return W
 
 # def logic()
 #     a = take_work()
-#     if 
+#     if W in word
+
     
 
     
