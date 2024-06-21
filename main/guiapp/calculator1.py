@@ -3,9 +3,10 @@ import tkinter as tk
 app= tk.Tk()
 app.title("My Calculator")
 app.geometry("450x450")
+app.config(bg='#003366')
 
 result=tk.Entry(width=40,font="60")
-result.grid(padx=20,pady=35,row=0,column=0,columnspan=4)
+result.grid(padx=20,pady=35,row=0,column=0,columnspan=5)
 
 def take_input(params):
     cvalue = result.get()
@@ -34,11 +35,11 @@ def percentage():
  result.delete(0, tk.END)
  result.insert(0, total)
 
-def Square():
- current = result.get()
- total = eval(current) ** 2
- result.delete(0, tk.END)
- result.insert(0, total)
+# def Square():
+#  current = result.get()
+#  total = eval(current) **2
+#  result.delete(0, tk.END)
+#  result.insert(0, total)
 
 zero = tk.Button(app, text="0", padx=40, pady=20,command=lambda:take_input("0"))
 one = tk.Button(app, text="1", padx=40, pady=20,command=lambda:take_input("1"))
@@ -60,7 +61,7 @@ divide = tk.Button(app, text="/", padx=40, pady=20,command=lambda:take_input("/"
 clear = tk.Button(app, text="C", padx=38, pady=20,command=clear_value)
 percentage1= tk.Button(app, text="%", padx=38, pady=20,command=percentage)
 back_space1=tk.Button(app, text="<--", padx=38, pady=20,command=back_space)
-square_button=tk.Button(app, text="x^2", padx=38, pady=20,command=Square)
+square_button=tk.Button(app, text="x^2", padx=38, pady=20,command=lambda:take_input("**"))
 
 clear.grid(row=1,column=0)
 square_button.grid(row=1,column=1)
