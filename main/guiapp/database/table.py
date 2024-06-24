@@ -6,7 +6,6 @@ def create_tables():
     CREATE TABLE IF NOT EXISTS students(
                    id INTEGER PRIMARY KEY AUTOINCREMENT,
                    firstname TEXT NOT NULL,
-                   middlename,
                    lastname TEXT NOT NULL,
                    email TEXT NOT NULL,
                    phone INTEGER ,
@@ -41,17 +40,19 @@ def delete(id):
 
 
 
-def update(name,email,salary,department):
+def update(firstname,lastname,email,phone,password):
     cursor.execute("""
-    UPDATE students SET name = ?, address = ? WHERE id = ?
-    """,(name,email,salary,department))
+    UPDATE students SET firstname = ?, password = ? WHERE id = ?
+    """,(firstname,lastname,email,phone,password))
     conn.commit()
 # update()
+
 firstname = input("Enter your firstname")
 lastname = input("Enter your lastname")
 email = input("Enter your email")
 phone = input("Enter your phonenumber")
 password = input("Enter your password")
+
 insert(firstname,lastname,email,phone,password)
 
 
