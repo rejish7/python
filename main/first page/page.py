@@ -13,6 +13,7 @@ def submit_form():
                    email TEXT NOT NULL,
                    phone integer ,
                    gender TEXT NOT NULL
+                
  
                    )
     """)
